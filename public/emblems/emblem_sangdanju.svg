@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="#F7F5F1"/>
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+  <!-- Inner ring -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+  <!-- Scale vertical post -->
+  <rect x="97" y="74" width="6" height="50" rx="2" fill="#3F6F5A"/>
+  <!-- Scale top horizontal bar -->
+  <rect x="72" y="82" width="56" height="5" rx="2" fill="#3F6F5A"/>
+  <!-- Scale center fulcrum point -->
+  <polygon points="100,87 106,96 94,96" fill="#3F6F5A"/>
+  <!-- Left pan chain -->
+  <line x1="75" y1="87" x2="75" y2="108" stroke="#3F6F5A" stroke-width="2"/>
+  <!-- Right pan chain -->
+  <line x1="125" y1="87" x2="125" y2="108" stroke="#3F6F5A" stroke-width="2"/>
+  <!-- Left pan circle -->
+  <circle cx="75" cy="114" r="10" fill="#3F6F5A"/>
+  <!-- Right pan circle -->
+  <circle cx="125" cy="114" r="10" fill="#3F6F5A"/>
+  <!-- Scale base -->
+  <rect x="88" y="124" width="24" height="5" rx="2" fill="#3F6F5A"/>
+  <!-- Ribbon banner at bottom -->
+  <polygon points="68,152 100,160 132,152 126,168 100,172 74,168" fill="#1A1A1A" opacity="0.75"/>
+  <polygon points="68,152 62,162 74,168" fill="#1A1A1A" opacity="0.75"/>
+  <polygon points="132,152 138,162 126,168" fill="#1A1A1A" opacity="0.75"/>
+</svg>

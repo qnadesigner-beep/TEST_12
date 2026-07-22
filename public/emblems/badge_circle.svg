@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <!-- Dark background -->
+  <rect width="80" height="80" rx="8" fill="#1A1A1A"/>
+  <!-- 5 small circles arranged in a ring at radius ~24 from center, connected by lines -->
+  <!-- Circle positions (angle 90, 162, 234, 306, 18 degrees = top then clockwise) -->
+  <!-- Top:       40, 16 -->
+  <!-- Top-right: 63, 33 -->
+  <!-- Bot-right: 55, 60 -->
+  <!-- Bot-left:  25, 60 -->
+  <!-- Top-left:  17, 33 -->
+  <!-- Connecting lines -->
+  <polygon points="40,16 63,33 55,60 25,60 17,33" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Inner star connections (skip one) -->
+  <line x1="40" y1="16" x2="55" y2="60" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="16" x2="25" y2="60" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="63" y1="33" x2="25" y2="60" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="63" y1="33" x2="17" y2="33" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="55" y1="60" x2="17" y2="33" stroke="white" stroke-width="1" opacity="0.5"/>
+  <!-- The 5 circles -->
+  <circle cx="40" cy="16" r="6" fill="white"/>
+  <circle cx="63" cy="33" r="6" fill="white"/>
+  <circle cx="55" cy="60" r="6" fill="white"/>
+  <circle cx="25" cy="60" r="6" fill="white"/>
+  <circle cx="17" cy="33" r="6" fill="white"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <!-- Dark background -->
+  <rect width="80" height="80" rx="8" fill="#1A1A1A"/>
+  <!-- Vertical pole -->
+  <rect x="26" y="12" width="4" height="58" rx="2" fill="white"/>
+  <!-- Triangular pennant flag -->
+  <polygon points="30,14 64,28 30,42" fill="white"/>
+</svg>

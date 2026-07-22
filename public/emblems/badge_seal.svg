@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <!-- Dark background -->
+  <rect width="80" height="80" rx="8" fill="#1A1A1A"/>
+  <!-- Outer circle -->
+  <circle cx="40" cy="40" r="28" fill="none" stroke="white" stroke-width="2.5"/>
+  <!-- Triangle (seal mark) inside -->
+  <polygon points="40,18 62,56 18,56" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Center dot -->
+  <circle cx="40" cy="40" r="3" fill="white"/>
+</svg>

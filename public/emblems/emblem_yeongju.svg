@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="#F7F5F1"/>
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+  <!-- Inner ring -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+  <!-- Gate left pillar -->
+  <rect x="70" y="80" width="14" height="46" rx="2" fill="#5B3A6E"/>
+  <!-- Gate right pillar -->
+  <rect x="116" y="80" width="14" height="46" rx="2" fill="#5B3A6E"/>
+  <!-- Gate arch -->
+  <path d="M70,96 Q70,68 100,68 Q130,68 130,96" fill="#5B3A6E" stroke="none"/>
+  <!-- Gate arch inner opening -->
+  <path d="M78,96 Q78,78 100,78 Q122,78 122,96" fill="#F7F5F1" opacity="0.4"/>
+  <!-- Key shaft (horizontal) -->
+  <rect x="88" y="107" width="32" height="6" rx="2" fill="#5B3A6E"/>
+  <!-- Key head (circle) -->
+  <circle cx="88" cy="110" r="9" fill="#5B3A6E"/>
+  <!-- Key head hole -->
+  <circle cx="88" cy="110" r="4" fill="#F7F5F1" opacity="0.5"/>
+  <!-- Key teeth -->
+  <rect x="104" y="113" width="5" height="7" rx="1" fill="#5B3A6E"/>
+  <rect x="114" y="113" width="5" height="7" rx="1" fill="#5B3A6E"/>
+  <!-- Ribbon banner at bottom -->
+  <polygon points="68,152 100,160 132,152 126,168 100,172 74,168" fill="#1A1A1A" opacity="0.75"/>
+  <polygon points="68,152 62,162 74,168" fill="#1A1A1A" opacity="0.75"/>
+  <polygon points="132,152 138,162 126,168" fill="#1A1A1A" opacity="0.75"/>
+</svg>

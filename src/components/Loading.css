@@ -1,0 +1,54 @@
+.loading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  gap: 2rem;
+  background: var(--bg);
+}
+
+/* 스피너 */
+.loading-spinner {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.spinner-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--surface-3);
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 10px rgba(57,255,20,0.3);
+}
+
+.spinner-ring--2 {
+  inset: 10px;
+  border-top-color: transparent;
+  border-right-color: rgba(57,255,20,0.5);
+  animation-duration: 0.75s;
+  animation-direction: reverse;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 카피 */
+.loading-copy {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  min-width: 16ch;
+  text-align: center;
+}
+
+.loading-dots {
+  display: inline-block;
+  width: 1.5ch;
+  text-align: left;
+  color: var(--accent);
+}
