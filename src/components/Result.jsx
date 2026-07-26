@@ -80,7 +80,9 @@ export default function Result({ result, onRetry, onDetail }) {
 
           {/* 캐릭터명 — 이미지 위에 올라옴 */}
           <div className="result-char-header">
-            <h1 className="result-char-name">{character.name}</h1>
+            <h1 className="result-char-name">
+              {character.name} <span className="result-char-myth">— {character.mythName}</span>
+            </h1>
             <p className="result-char-subtitle">{character.definition}</p>
           </div>
         </div>

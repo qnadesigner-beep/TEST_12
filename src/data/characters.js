@@ -7,7 +7,8 @@ export const characters = {
   hunter: {
     id: 'hunter',
     name: '사냥꾼',
-    bgImage: '/images/bg_hunter.jpg.png',
+    bgImage: '/images/bg_hunter.jpg',
+    mythName: 'Artemis',
     rLabel: '흐름형',
     lLabel: '내 몸만',
     accentColor: '#39FF14',
@@ -19,7 +20,8 @@ export const characters = {
   fisher: {
     id: 'fisher',
     name: '어부',
-    bgImage: '/images/bg_fisher.jpg.png',
+    bgImage: '/images/bg_fisher.jpg',
+    mythName: 'Poseidon',
     rLabel: '흐름형',
     lLabel: '시스템',
     accentColor: '#39FF14',
@@ -31,7 +33,8 @@ export const characters = {
   clergy: {
     id: 'clergy',
     name: '성직자',
-    bgImage: '/images/bg_clergy.jpg.png',
+    bgImage: '/images/bg_clergy.jpg',
+    mythName: 'Hestia',
     rLabel: '반복형',
     lLabel: '시스템',
     accentColor: '#39FF14',
@@ -45,7 +48,8 @@ export const characters = {
   blacksmith: {
     id: 'blacksmith',
     name: '대장장이',
-    bgImage: '/images/bg_blacksmith.jpg.png',
+    bgImage: '/images/bg_blacksmith.jpg',
+    mythName: 'Hephaestus',
     rLabel: '반복형',
     lLabel: '내 몸만',
     accentColor: '#39FF14',
@@ -57,7 +61,8 @@ export const characters = {
   merchant: {
     id: 'merchant',
     name: '상인',
-    bgImage: '/images/bg_merchant.jpg.png',
+    bgImage: '/images/bg_merchant.jpg',
+    mythName: 'Hermes',
     rLabel: '흐름형',
     lLabel: '손발+도구',
     accentColor: '#39FF14',
@@ -69,7 +74,8 @@ export const characters = {
   architect: {
     id: 'architect',
     name: '건축가',
-    bgImage: '/images/bg_architect.jpg.png',
+    bgImage: '/images/bg_architect.jpg',
+    mythName: 'Daedalus',
     rLabel: '축적형',
     lLabel: '손발+도구',
     accentColor: '#39FF14',
@@ -83,8 +89,9 @@ export const characters = {
   farmer: {
     id: 'farmer',
     name: '농부',
-    bgImage: '/images/bg_farmer.jpg.png',
-    rLabel: '축적형',
+    bgImage: '/images/bg_farmer.jpg',
+    mythName: 'Demeter',
+    rLabel: '반복형',
     lLabel: '손발+도구',
     accentColor: '#39FF14',
     definition: '심은 게 계속 자란다. 기다릴 줄 아는 사람.',
@@ -95,7 +102,8 @@ export const characters = {
   professor: {
     id: 'professor',
     name: '교수',
-    bgImage: '/images/bg_professor.jpg.png',
+    bgImage: '/images/bg_professor.jpg',
+    mythName: 'Athena',
     rLabel: '축적형',
     lLabel: '내 몸만',
     accentColor: '#39FF14',
@@ -107,7 +115,8 @@ export const characters = {
   lord: {
     id: 'lord',
     name: '군주',
-    bgImage: '/images/bg_lord.jpg.png',
+    bgImage: '/images/bg_lord.jpg',
+    mythName: 'Zeus',
     rLabel: '축적형',
     lLabel: '시스템',
     accentColor: '#D4AF37',
