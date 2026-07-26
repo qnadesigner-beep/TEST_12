@@ -89,8 +89,8 @@ export default function DetailReport({ result, onBack }) {
       {/* Threads CTA — 맨 마지막 */}
       <div className="dr-cta">
         <p className="dr-cta-desc">
-          {character.name} 사장님이 실제로 이 전환을 한 사례,<br />
-          막혔던 순간과 넘긴 방법을 Threads에서 씁니다.
+          혼자 버티는 사장님들의 이야기가 있습니다.<br />
+          멈추면 굶는 사장 — Threads에서 만나요.
         </p>
         <button
           className="dr-cta-btn"
@@ -98,7 +98,7 @@ export default function DetailReport({ result, onBack }) {
           style={{ borderColor: character.accentColor, color: character.accentColor }}
           id="btn-threads-detail"
         >
-          {character.name}편 읽으러 가기 →
+          응원받으러 가기 →
         </button>
       </div>
 
