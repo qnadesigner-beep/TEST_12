@@ -95,6 +95,10 @@ export default function Result({ result, onRetry, onDetail }) {
             <span className="result-tag">{rLabel}</span>
             <span className="result-tag">{lLabel}</span>
             <span className="result-tag result-tag--accent">{path}</span>
+            <span className="result-tag result-tag--ratio">
+              사장님의 {character.populationRatio}%
+              {character.isRare && <span className="result-rare-badge"> ✦ 희소</span>}
+            </span>
           </div>
 
           {/* Q9 ≠ Q10 비교 */}

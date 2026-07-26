@@ -7,7 +7,7 @@ const SECTION_LABELS = [
   { key: 'structure',  title: '지금 당신의 판' },
   { key: 'growth',     title: '다음 단계 경로' },
   { key: 'mistake',    title: '이 유형이 반복하는 실수' },
-  { key: 'thisWeek',   title: '이번 주 딱 하나' },
+  { key: 'thisWeek',   title: '이번 주 딱 하나 — 다음 주엔 달라진다' },
   { key: 'reference',  title: '참고할 캐릭터' },
   { key: 'trap',       title: '지금 당장 피할 것' },
 ];
@@ -52,25 +52,13 @@ export default function DetailReport({ result, onBack }) {
         <span className="dr-char-def">{character.definition}</span>
       </div>
 
-      {/* 6섹션 카피 */}
-      <div className="dr-sections">
-        {SECTION_LABELS.map(({ key, title }, i) => (
-          <div key={key} className="dr-section">
-            <span className="dr-section-num">0{i + 1}</span>
-            <div className="dr-section-content">
-              <h3 className="dr-section-title">{title}</h3>
-              <p className="dr-section-body">{data[key]}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* 무기 전환 분석 */}
+      {/* 01. 자본 이동 분석 (대운) — 최상단 승격 */}
       <div className="dr-block dr-block--weapon">
-        <h3 className="dr-block-title">자본 이동 분석</h3>
+        <h3 className="dr-block-title">자본 이동 분석 (대운)</h3>
         {weaponMatch ? (
           <p className="dr-block-body">
-            <strong>{pastWeaponLabel}</strong>에 과거에도 지금도 집중하고 있다. {transText}
+            <strong>{pastWeaponLabel}</strong>에 과거에도 지금도 집중하고 있다. (3년째 같은 무기 — 안정이자 정체){' '}
+            {transText}
           </p>
         ) : (
           <p className="dr-block-body">
@@ -78,6 +66,36 @@ export default function DetailReport({ result, onBack }) {
             {transText}
           </p>
         )}
+      </div>
+
+      {/* 6섹션 카피 */}
+      <div className="dr-sections">
+        {SECTION_LABELS.map(({ key, title }, i) => {
+          if (key === 'reference') {
+            return (
+              <div key={key} className="dr-section">
+                <span className="dr-section-num">0{i + 2}</span>
+                <div className="dr-section-content">
+                  <h3 className="dr-section-title">{title}</h3>
+                  <div className="dr-ref-group">
+                    <p className="dr-section-body"><strong>[당신을 도울 유형]</strong> {data.helper}</p>
+                    <p className="dr-section-body" style={{ marginTop: '0.4rem' }}><strong>[당신이 배울 유형]</strong> {data.mentor}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div key={key} className="dr-section">
+              <span className="dr-section-num">0{i + 2}</span>
+              <div className="dr-section-content">
+                <h3 className="dr-section-title">{title}</h3>
+                <p className="dr-section-body">{data[key]}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* AI 동행자 처방 */}

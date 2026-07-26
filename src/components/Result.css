@@ -133,6 +133,17 @@
   background: rgba(57,255,20,0.06);
 }
 
+.result-tag--ratio {
+  color: #E2E8F0;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.result-rare-badge {
+  color: #D4AF37;
+  font-weight: 700;
+}
+
 /* ── 조합 문장 ────────────────────────────── */
 .result-identity-line {
   font-size: 0.88rem;
