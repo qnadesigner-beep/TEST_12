@@ -32,11 +32,11 @@ export function calcResult(answers) {
   else if (lScore <= 5) lTier = 'tool';
   else                  lTier = 'system';
 
-  // 3×3 매핑
+  // 3×3 매핑 — 지침서 §2 확정 매트릭스
   const MAP = {
-    flow:   { body: 'hunter',     tool: 'fisher',    system: 'clergy'    },
-    repeat: { body: 'blacksmith', tool: 'merchant',  system: 'architect' },
-    stack:  { body: 'farmer',     tool: 'professor', system: 'lord'      },
+    flow:   { body: 'hunter',     tool: 'merchant',  system: 'fisher'    },
+    repeat: { body: 'blacksmith', tool: 'farmer',    system: 'clergy'    },
+    stack:  { body: 'professor',  tool: 'architect', system: 'lord'      },
   };
 
   const charKey = MAP[rTier][lTier];
