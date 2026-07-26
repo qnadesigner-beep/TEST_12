@@ -7,16 +7,18 @@ import Intro from './components/Intro.jsx';
 import Quiz from './components/Quiz.jsx';
 import Loading from './components/Loading.jsx';
 import Result from './components/Result.jsx';
+import DetailReport from './components/DetailReport.jsx';
 import './index.css';
 
 // GA4 스크립트 동적 로드 (실제 ID 교체 후 활성화)
 // if (GA_ID !== 'G-XXXXXXXXXX') { ... }
 
 const SCREENS = {
-  INTRO: 'intro',
-  QUIZ: 'quiz',
-  LOADING: 'loading',
+  INTRO:  'intro',
+  QUIZ:   'quiz',
+  LOADING:'loading',
   RESULT: 'result',
+  DETAIL: 'detail',
 };
 
 const INITIAL_ANSWERS = {};
@@ -73,6 +75,10 @@ export default function App() {
     setResult(null);
   }
 
+  // 상세 진단서
+  function handleDetailOpen() { setScreen(SCREENS.DETAIL); }
+  function handleDetailBack()  { setScreen(SCREENS.RESULT); }
+
   return (
     <div className="app-container">
       {screen === SCREENS.INTRO && (
@@ -90,7 +96,10 @@ export default function App() {
         <Loading onDone={handleLoadingDone} />
       )}
       {screen === SCREENS.RESULT && result && (
-        <Result result={result} onRetry={handleRetry} />
+        <Result result={result} onRetry={handleRetry} onDetail={handleDetailOpen} />
+      )}
+      {screen === SCREENS.DETAIL && result && (
+        <DetailReport result={result} onBack={handleDetailBack} />
       )}
     </div>
   );

@@ -71,5 +71,9 @@ export function calcResult(answers) {
     weaponMatch,
     pastWeaponLabel:    weaponLabels[pastWeaponKey],
     currentWeaponLabel: weaponLabels[weaponKey],
+    // 상세 진단서용 원본 키
+    companionKey,
+    pastWeaponKey,
+    currentWeaponKey: weaponKey,
   };
 }

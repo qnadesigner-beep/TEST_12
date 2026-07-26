@@ -6,7 +6,7 @@ import './Result.css';
 const THREADS_URL = 'https://www.threads.com/@wag_on_q';
 const DIAG_URL = 'wag-on-q.vercel.app';
 
-export default function Result({ result, onRetry }) {
+export default function Result({ result, onRetry, onDetail }) {
   const {
     character,
     weapon,
@@ -62,66 +62,65 @@ export default function Result({ result, onRetry }) {
         style={{ '--char-accent': character.accentColor }}
         id="result-card"
       >
-        {/* 상단 컬러 라인 */}
-        <div className="result-card-topline" />
+        {/* ── 상단: 석상 배경 이미지 영역 ── */}
+        <div
+          className="result-hero"
+          style={{
+            backgroundImage: character.bgImage
+              ? `url(${character.bgImage})`
+              : 'none',
+          }}
+        >
+          {/* 이미지 없을 때 플레이스홀더 */}
+          {!character.bgImage && (
+            <div className="result-hero-placeholder" />
+          )}
+          {/* 하단 그라데이션 오버레이 */}
+          <div className="result-hero-overlay" />
 
-        {/* 엠블럼 */}
-        <div className="result-emblem-wrap">
-          <img
-            src={character.emblem ?? `/emblems/emblem_${character.id}.svg`}
-            alt={character.name}
-            className="result-emblem"
-            onError={(e) => { e.target.style.display = 'none'; }}
-          />
-          <img
-            src={weapon.badge}
-            alt={weapon.name}
-            className={`result-badge ${weaponMatch ? 'result-badge--confirmed' : ''}`}
-            style={weaponMatch ? { outline: `2px solid ${character.accentColor}` } : {}}
-            onError={(e) => { e.target.style.display = 'none'; }}
-          />
-        </div>
-
-        {/* 캐릭터명 — 한자 없음, Pretendard 고딕 */}
-        <div className="result-char-header">
-          <h1 className="result-char-name">{character.name}</h1>
-          <p className="result-char-subtitle">{character.definition}</p>
-        </div>
-
-        {/* 수익 방식 + 자본 유형 태그 (단순하게) */}
-        <div className="result-tags">
-          <span className="result-tag">{rLabel}</span>
-          <span className="result-tag">{lLabel}</span>
-          <span className="result-tag result-tag--accent">{path}</span>
-        </div>
-
-        {/* Q9 ≠ Q10 비교 (있을 때만) */}
-        {!weaponMatch && (
-          <div className="result-weapon-compare">
-            지금까지는 <strong>{pastWeaponLabel}</strong>으로 버텼고,
-            앞으로는 <strong>{currentWeaponLabel}</strong>에 집중하고 있다.
+          {/* 캐릭터명 — 이미지 위에 올라옴 */}
+          <div className="result-char-header">
+            <h1 className="result-char-name">{character.name}</h1>
+            <p className="result-char-subtitle">{character.definition}</p>
           </div>
-        )}
-
-        {/* 게이지 — 라벨만, 숫자 없음 */}
-        <div className="result-gauges">
-          <GaugeBar label="수익 반복성" valueLabel={rLabel} pct={rPct} accentColor={character.accentColor} />
-          <GaugeBar label="레버리지" valueLabel={lLabel} pct={lPct} accentColor={character.accentColor} />
         </div>
 
-        {/* 3블록 카피 */}
-        <div className="result-blocks">
-          <CopyBlock title="강점" body={character.uniqueStrength} />
-          <CopyBlock title="주의할 것" body={character.leak} />
-          <CopyBlock
-            title="지금 당장"
-            body={`${companionPrefix}\n${character.nextMove}`}
-            accent={character.accentColor}
-          />
-        </div>
+        {/* ── 하단: 본문 영역 ── */}
+        <div className="result-body">
 
-        <div className="result-card-footer no-capture">
-          {DIAG_URL}
+          {/* 태그 */}
+          <div className="result-tags">
+            <span className="result-tag">{rLabel}</span>
+            <span className="result-tag">{lLabel}</span>
+            <span className="result-tag result-tag--accent">{path}</span>
+          </div>
+
+          {/* Q9 ≠ Q10 비교 */}
+          {!weaponMatch && (
+            <div className="result-weapon-compare">
+              지금까지는 <strong>{pastWeaponLabel}</strong>으로 버텼고,
+              앞으로는 <strong>{currentWeaponLabel}</strong>에 집중하고 있다.
+            </div>
+          )}
+
+          {/* 게이지 */}
+          <div className="result-gauges">
+            <GaugeBar label="수익 반복성" valueLabel={rLabel} pct={rPct} accentColor={character.accentColor} />
+            <GaugeBar label="레버리지"   valueLabel={lLabel} pct={lPct} accentColor={character.accentColor} />
+          </div>
+
+          {/* 3블록 카피 */}
+          <div className="result-blocks">
+            <CopyBlock title="강점"      body={character.uniqueStrength} />
+            <CopyBlock title="주의할 것"  body={character.leak} />
+            <CopyBlock
+              title="지금 당장"
+              body={`${companionPrefix}\n${character.nextMove}`}
+              accent={character.accentColor}
+            />
+          </div>
+
+          <div className="result-card-footer">{DIAG_URL}</div>
         </div>
       </div>
 
@@ -137,11 +136,12 @@ export default function Result({ result, onRetry }) {
         </button>
 
         <button
-          className="btn-secondary result-cta-btn"
-          onClick={handleCtaClick}
-          id="btn-threads-cta"
+          className="btn-primary result-detail-btn"
+          onClick={onDetail}
+          id="btn-detail"
+          style={{ background: 'var(--surface-2)', color: 'var(--text-primary)', border: '1.5px solid var(--border)', boxShadow: 'none' }}
         >
-          이 캐릭터로 시작하는 이야기 보기
+          {character.name} 상세 진단서 보기
         </button>
 
         <button className="result-retry-btn" onClick={onRetry} id="btn-retry">
@@ -149,9 +149,7 @@ export default function Result({ result, onRetry }) {
         </button>
       </div>
 
-      <p className="result-footer-text">
-        사장님 캐릭터 찾기 — 멈추면 굶는 사장
-      </p>
+      <p className="result-footer-text">멈추면 굶는 사장</p>
     </div>
   );
 }

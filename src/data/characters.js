@@ -7,6 +7,7 @@ export const characters = {
   hunter: {
     id: 'hunter',
     name: '사냥꾼',
+    bgImage: '/images/bg_hunter.jpg.png',
     rLabel: '흐름형',
     lLabel: '내 몸만',
     accentColor: '#2E7D32',
@@ -18,6 +19,7 @@ export const characters = {
   fisher: {
     id: 'fisher',
     name: '어부',
+    bgImage: '/images/bg_fisher.jpg.png',
     rLabel: '흐름형',
     lLabel: '손발+도구',
     accentColor: '#1565C0',
@@ -29,6 +31,7 @@ export const characters = {
   clergy: {
     id: 'clergy',
     name: '성직자',
+    bgImage: '/images/bg_clergy.jpg.png',
     rLabel: '흐름형',
     lLabel: '시스템',
     accentColor: '#6A1B9A',
@@ -42,6 +45,7 @@ export const characters = {
   blacksmith: {
     id: 'blacksmith',
     name: '대장장이',
+    bgImage: '/images/bg_blacksmith.jpg.png',
     rLabel: '반복형',
     lLabel: '내 몸만',
     accentColor: '#37474F',
@@ -53,6 +57,7 @@ export const characters = {
   merchant: {
     id: 'merchant',
     name: '상인',
+    bgImage: '/images/bg_merchant.jpg.png',
     rLabel: '반복형',
     lLabel: '손발+도구',
     accentColor: '#E65100',
@@ -64,6 +69,7 @@ export const characters = {
   architect: {
     id: 'architect',
     name: '건축가',
+    bgImage: '/images/bg_architect.jpg.png',
     rLabel: '반복형',
     lLabel: '시스템',
     accentColor: '#00695C',
@@ -77,6 +83,7 @@ export const characters = {
   farmer: {
     id: 'farmer',
     name: '농부',
+    bgImage: '/images/bg_farmer.jpg.png',
     rLabel: '축적형',
     lLabel: '내 몸만',
     accentColor: '#558B2F',
@@ -88,6 +95,7 @@ export const characters = {
   professor: {
     id: 'professor',
     name: '교수',
+    bgImage: '/images/bg_professor.jpg.png',
     rLabel: '축적형',
     lLabel: '손발+도구',
     accentColor: '#AD1457',
@@ -99,6 +107,7 @@ export const characters = {
   lord: {
     id: 'lord',
     name: '군주',
+    bgImage: '/images/bg_lord.jpg.png',
     rLabel: '축적형',
     lLabel: '시스템',
     accentColor: '#4527A0',

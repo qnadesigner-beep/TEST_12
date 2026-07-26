@@ -1,0 +1,197 @@
+.dr-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--bg);
+  padding-bottom: calc(3rem + var(--safe-bottom));
+  animation: drReveal 0.35s cubic-bezier(0.4,0,0.2,1) both;
+}
+
+@keyframes drReveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── 헤더 ─────────────────────────────────── */
+.dr-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: calc(1rem + var(--safe-top)) 1.25rem 1rem;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.dr-back-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dr-header-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+/* ── 캐릭터 바 ───────────────────────────── */
+.dr-char-bar {
+  padding: 1.5rem 1.5rem 1.25rem;
+  border-bottom: 3px solid var(--char-accent, var(--accent));
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dr-char-name {
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  font-family: var(--font);
+}
+
+.dr-char-def {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── 6섹션 ───────────────────────────────── */
+.dr-sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.dr-section {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dr-section-num {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+  width: 1.5rem;
+}
+
+.dr-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dr-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.dr-section-body {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* 이번 주 딱 하나 — 강조 */
+.dr-section:nth-child(4) .dr-section-body {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ── 블록 (무기·AI) ──────────────────────── */
+.dr-block {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dr-block--weapon {
+  background: var(--surface-2);
+}
+
+.dr-block--ai {
+  background: rgba(57,255,20,0.04);
+  border-left: 3px solid var(--accent);
+}
+
+.dr-block-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+
+.dr-block-body {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Threads CTA ─────────────────────────── */
+.dr-cta {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.dr-cta-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.dr-cta-btn {
+  width: 100%;
+  max-width: 360px;
+  background: transparent;
+  border: 1.5px solid;
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.9rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dr-cta-btn:hover {
+  opacity: 0.8;
+}
+
+/* 모바일 */
+@media (max-width: 375px) {
+  .dr-section { padding: 1rem 1.1rem; }
+  .dr-block    { padding: 1rem 1.1rem; }
+  .dr-cta      { padding: 1.5rem 1.1rem; }
+  .dr-char-bar { padding: 1.25rem 1.1rem 1rem; }
+}
